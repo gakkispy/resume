@@ -7,7 +7,7 @@ function deploy() {
     `git subtree split --prefix dist -b gh-pages`,
     `git push origin gh-pages:gh-pages --force`,
     `git branch -D gh-pages`,
-    `git reset --hard HEAD^`,
+    `git reset --hard HEAD~1`,
   ]
   childProcess.exec(splitCommands.join('&&'), (error, stdout, stderr) => {
     if (error) {

@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "node ./scripts/deploy.js",
+    "deploy": "npm run build && node ./scripts/deploy.js",
     "pdf:black": "node ./scripts/print.js",
     "pdf:color": "node ./scripts/print.js color"
   },
