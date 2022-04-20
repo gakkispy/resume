@@ -1,0 +1,15 @@
+.icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+.icon-container .icon{
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 5px;
+}
+.icon-container a{
+    color: var(--default-color);
+}

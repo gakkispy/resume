@@ -1,0 +1,31 @@
+.header-container {
+    color: var(--color);
+    background-color: var(--background-color);
+}
+.header-container.colorful{
+    padding: 2rem 2.2rem;
+}
+.header-container.black{
+    padding: 2rem 2.2rem 0;
+}
+.id-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+.id-container h1{
+    margin-bottom: 0;
+}
+.id-container .post{
+    font-size: 20px;
+}
+.base-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info-container{
+    display: flex;
+    justify-content: space-between;
+}

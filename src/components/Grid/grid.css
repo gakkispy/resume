@@ -1,0 +1,17 @@
+.one-col{
+    width: 100%;
+}
+.container .two-col:nth-child(2n+1){
+    margin-right: 2em;
+}
+.two-col{
+    width: calc(50% - 1em);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 14px;
+    padding: 0 10mm;
+    flex-wrap: wrap;
+}

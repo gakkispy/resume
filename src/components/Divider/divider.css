@@ -1,0 +1,21 @@
+.divider{
+    margin-bottom: 5px;
+    flex-shrink: 0;
+    display: flex;
+    white-space: nowrap;
+    text-align: center;
+    border: 0px;
+}
+.divider .text{
+    display: inline-block;
+    padding-left: calc(9.6px);
+    padding-right: calc(9.6px);
+}
+.divider::before, .divider::after{
+    position: relative;
+    width: 100%;
+    border-top: thin solid rgba(0, 0, 0, 0.12);
+    top: 50%;
+    content: "";
+    transform: translateY(50%);
+}

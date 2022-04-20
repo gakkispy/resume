@@ -1,0 +1,28 @@
+{
+  "name": "resume",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "node ./scripts/deploy.js",
+    "pdf:black": "node ./scripts/print.js",
+    "pdf:color": "node ./scripts/print.js color"
+  },
+  "dependencies": {
+    "paper-css": "^0.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "fast-glob": "^3.2.11",
+    "puppeteer": "^13.5.2",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0",
+    "vite-plugin-svg-icons": "^2.0.1"
+  }
+}

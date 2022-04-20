@@ -1,0 +1,26 @@
+.item-container{
+    margin-bottom: 10px;
+}
+.item-container .content,
+.item-container .bg-info{
+    text-align: justify;
+}
+.item-container .bg-info{
+    color: #666;
+    font-size: 12px;
+    margin: 5px 0;
+}
+.item-container .title-container{
+    display: flex;
+    justify-content: space-between;
+}
+.item-container .title{
+    font-weight: bold;
+}
+.item-container .technique{
+    border: 1px solid var(--border-color);
+    padding: 1px 5px;  
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--color);
+}
