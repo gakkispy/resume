@@ -12,6 +12,7 @@ function deploy() {
   childProcess.exec(splitCommands.join('&&'), (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
+      childProcess.execSync('git reset --hard HEAD^')
       return;
     }
     console.log(`stdout: ${stdout}`);
