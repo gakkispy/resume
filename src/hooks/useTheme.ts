@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import themeStyle, { Theme } from '../utils/theme'
 type typeStyle = keyof typeof themeStyle[Theme.COlORFUL]
 
-export function useTheme() {
-  const [theme, setTheme] = useState(Theme.BACK)
+export function useTheme(defaultTheme: Theme = Theme.COlORFUL) {
+  const [theme, setTheme] = useState(defaultTheme)
   useEffect(() => {
     const root = document.documentElement
     Object.keys(themeStyle[theme]).map(style => {

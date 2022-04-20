@@ -17,6 +17,8 @@ async function print(link) {
     if(argv && argv.includes('color')) {
         console.log('print colorful one')
         await page.click('.color-btn')
+    }else{
+        await page.click('.black-btn')
     }
     const colorFolderDatePath = `${outputPath}/${dateFormat()}`
     const typeFolderPath = `${colorFolderDatePath}/${argv || 'black'}`
