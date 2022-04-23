@@ -13,29 +13,7 @@
     fill: var(--color);
 }
 
-.print-btn-container{
-    position: fixed;
-    top: 10px;
-    right: 10px;
-}
-.col-btn-container{
-    position: fixed;
-    top: 50px;
-    right: 10px;
-}
-@media print {
-    .print-btn{
-        display: none;
-    }
-}
-.print-btn{
-    border: 1px solid var(--border-color);
-    background-color: var(--background-color);
-    color: var(--color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.print-btn +.print-btn{
-    margin-left: 5px;
+.screen{
+    background-color: #fff;
+    margin-top: 34px;
 }

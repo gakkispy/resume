@@ -39,15 +39,28 @@ export default function Icon(props: Props) {
   const isMobile = defaultType === LINK_TYPE.PHONE
   const shouldHidden = typeof props.hidden !== 'undefined'? props.hidden : import.meta.env.PROD
   return (
-    <div className="icon-container">
-        {shouldHidden && isMobile? (
+    <BaseIcon iconName={defaultIcon}>
+      {shouldHidden && isMobile? (
           <span className="link">{text.replace(/(\d{3})(\d+)(\d{3})/, "$1***$3")}</span>
         ): (
           <a href={hidden? '' : formatLink} className="link">{text}</a>
         )}
-        <svg aria-hidden="true" className='icon'>
-          <use href={'#'+ defaultIcon} />
-        </svg>
+    </BaseIcon>    
+  )
+}
+interface BaseIconProps {
+  iconName: string;
+  children?: React.ReactNode;
+  onClick?: React.MouseEventHandler
+  className?: string
+}
+export function BaseIcon({ iconName, children, onClick, className }: BaseIconProps) {
+  return (
+    <div className={`icon-container ${className? className : ''}`} onClick={onClick}>
+      { children }
+      <svg aria-hidden="true" className='icon'>
+        <use href={'#' + iconName} />
+      </svg>
     </div>
   )
 }

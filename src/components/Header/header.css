@@ -3,9 +3,15 @@
     background-color: var(--background-color);
 }
 .header-container.colorful{
-    padding: 2rem 2.2rem;
+    padding: 2rem 1rem;
 }
 .header-container.black{
+    padding: 2rem 1rem 0;
+}
+.A4 .header-container.colorful{
+    padding: 2rem 2.2rem;
+}
+.A4 .header-container.black{
     padding: 2rem 2.2rem 0;
 }
 .id-container{
