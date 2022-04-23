@@ -15,7 +15,7 @@ function App() {
   const [auth, setAuth] = useState(false)
   const {theme, setTheme} = useTheme()
   useEffect(() => {
-    if (!import.meta.env.VITE_SECRET || !import.meta.env.VITE_SECRET_VALUE) {
+    if (import.meta.env.DEV || !import.meta.env.VITE_SECRET || !import.meta.env.VITE_SECRET_VALUE) {
       setAuth(true)
       return
     }

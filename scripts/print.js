@@ -11,6 +11,7 @@ const colorRegex = /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-
 async function print(link) {
     const argv = process.argv[2]
     const outputPath = path.resolve(__dirname, '../output')
+    if (!fs.existsSync(outputPath)) fs.mkdirSync(outputPath)
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(link);
