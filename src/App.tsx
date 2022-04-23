@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import Header from './components/Header'
-import Grid from './components/Grid'
-import Menubar from './components/Menubar'
-import './App.css'
-import  'paper-css/paper.css'
 import { COL } from './types'
-import { ThemeContext } from './context'
+import { ColContext, ThemeContext } from './context'
 import { useTheme } from './hooks/useTheme'
+import Menubar from './components/Menubar'
+import FirstPage from './components/Pages/FirstPage'
+import SecondPage from './components/Pages/SecondPage'
+import './App.css'
+import 'paper-css/paper.css'
 
 
 
@@ -34,12 +34,16 @@ function App() {
     return <div>opps...You don't have a right to read this.</div>
   }
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}> 
-      <section id='content-container'>
-        <Header />
-        <Grid colNum={colNum} />
-      </section>
-      <Menubar setCol={setCol}></Menubar>  
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <ColContext.Provider value={colNum}>
+        <section className='content-container'>
+         <FirstPage></FirstPage>
+        </section>
+        <section className='content-container'>
+          <SecondPage></SecondPage>
+        </section>
+        <Menubar setCol={setCol}></Menubar>  
+      </ColContext.Provider> 
     </ThemeContext.Provider>
    
   )

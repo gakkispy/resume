@@ -1,23 +1,22 @@
-import React, {useState} from 'react'
-import Project from '../Project'
-import PracticeProject from '../PracticeProject'
-import Brief from '../Brief'
-import PersonalProject from '../PersonalProject'
-import { COL } from '../../types'
+import React, {useContext, useState} from 'react'
+import { ColContext } from '../../context'
 import './grid.css'
 
-export default function Grid({colNum}: {colNum: COL}) {
-  
+interface Props{
+  left?: React.ReactNode;
+  right?: React.ReactNode;
+}
+
+export default function Grid({ left, right }: Props) {
+  const colNum = useContext(ColContext)
   return (
     <div className='container'>
       <div className={`${colNum}-col`}>
-          <Project></Project>
-          <PracticeProject></PracticeProject>
+        {left}
       </div>
       <div className={`${colNum}-col`}>
-        <Brief></Brief>
-        <PersonalProject></PersonalProject>
-        </div>
+        {right}
+      </div>
     </div>
   )
 }

@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { RATIO } from '../types'
 const A4_SIZE = 595
+const addAndRemoveClass = (contents: NodeListOf<Element> , addClass: string, removeClass: string) => {
+    contents.forEach(content => content.classList.add(addClass)) 
+    contents.forEach(content => content.classList.remove(removeClass))
+}
 export default function SwitchRatio() {
     const [ ratio, setRatio ] = useState(RATIO.FULL)
     useEffect(() => {
-        const content = document.getElementById('content-container')
+        const contents = document.querySelectorAll('.content-container') || []
         if(ratio === RATIO.A4) {
             document.body.classList.add('A4')
-            content?.classList.add('sheet')
-            content?.classList.remove('screen')
+            addAndRemoveClass(contents, 'sheet', 'screen')
         }else{
             document.body.classList.remove('A4')
-            content?.classList.remove('sheet')
-            content?.classList.add('screen')
+            addAndRemoveClass(contents, 'screen', 'sheet')
         }
     }, [ratio])
     useEffect(() => {

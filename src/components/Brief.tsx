@@ -8,7 +8,7 @@ export default function Brief() {
          <Divider text="个人简介" />
          <PartList>
              <PartItem>
-                熟悉Flex布局，响应式布局
+                熟悉Flex布局，响应式布局，熟悉使用scss
              </PartItem>
              <PartItem>
                 熟悉使用ES6, Vue并有深刻理解，同时也了解主流的React React Native GraphQL
