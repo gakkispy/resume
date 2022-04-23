@@ -15,7 +15,10 @@ function App() {
   const [auth, setAuth] = useState(false)
   const {theme, setTheme} = useTheme()
   useEffect(() => {
-    if (!import.meta.env.VITE_SECRET || !import.meta.env.VITE_SECRET_VALUE)return
+    if (!import.meta.env.VITE_SECRET || !import.meta.env.VITE_SECRET_VALUE) {
+      setAuth(true)
+      return
+    }
     const query = window.location.search
     if(query) {
       const keyValue = query.slice(1).split('&')
