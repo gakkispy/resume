@@ -16,4 +16,5 @@
 .screen{
     background-color: #fff;
     margin-top: 34px;
+    overflow: hidden;
 }
