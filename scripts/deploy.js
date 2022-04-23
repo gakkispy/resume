@@ -1,9 +1,11 @@
 const childProcess = require('child_process');
 
 function deploy() {
+  const msg = childProcess.execSync('git log -1 --pretty="%h:%s %cd"')
+  const msgCommand = ((msg) => `git commit -m "Deploying ${msg.toString().replace(/[\r\n]/, '')}" --quiet`)(msg)
   const splitCommands = [
     'git add -f dist',
-    'git commit -m "Deploying" --quiet',
+    `${msgCommand}`,
     `git subtree split --prefix dist -b gh-pages`,
     `git push origin gh-pages:gh-pages --force`,
     `git branch -D gh-pages`,
