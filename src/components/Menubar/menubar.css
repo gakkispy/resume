@@ -51,7 +51,7 @@
     right: 10px;
 }
 @media print {
-    .print-btn{
+    .menubar{
         display: none;
     }
 }
