@@ -21,7 +21,7 @@ export default function PersonalProject() {
          
         </PartItem>
         <PartItem>
-          参与赫尔辛基大学的全栈公开课程，学习React, Redux, Node.js, MongoDB, GraphQL 以及 TypeScript，完成1-12章课程学习与作业，
+          参与赫尔辛基大学的全栈公开课程，学习React, Redux, React Native, express, MongoDB, GraphQL, TypeScript, Docker等完成1-12章课程学习与作业
             <Icon
               text="https://github.com/cyanxxx/fullstack-learn"
             />
