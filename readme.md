@@ -11,3 +11,4 @@
   - 默认dev情况下不会隐藏手机号码，保存pdf时用的是dev环境所以也不会隐藏，在build[prod环境]自动隐藏，也可以直接指定hidden为true，那么无论什么环境都会隐藏手机号码
   - 分为彩色/黑色两种形式，运行`npm run pdf:[black/color]`保存不同颜色版本的pdf
   - deploy会将html部署到github page [简历在线地址](https://cyanxxx.github.io/resume/) (P.S.最近加了权限，如果有需要可以发邮件问我要地址，也可以自己git clone一个创建自己的简历，dev不会受限制)
+  - 单列和两列可以分为两个分支，选择自己合适的版本，溢出部分需要抽取出来PartList/PartItem为一个整体抽取
