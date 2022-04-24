@@ -10,12 +10,10 @@
 .container {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
     font-size: 14px;
-    padding: 0;
-    padding-right: 2em;
+    padding: 1rem 2rem;
     flex-wrap: wrap;
 }
 .A4 .container{
-    padding: 0 10mm;
+    padding: 1rem 10mm 1rem 5mm;
 }

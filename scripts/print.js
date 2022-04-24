@@ -15,10 +15,12 @@ async function print(link) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(link);
+    await page.waitForSelector('.A4');
     if(argv && argv.includes('color')) {
-        console.log('print colorful one')
+        console.log('Printing colorful one')
         await page.click('.color-btn')
     }else{
+        console.log('Printing black one')
         await page.click('.black-btn')
     }
     const colorFolderDatePath = `${outputPath}/${dateFormat()}`
@@ -26,13 +28,18 @@ async function print(link) {
     if(!fs.existsSync(colorFolderDatePath))  fs.mkdirSync(colorFolderDatePath)
     if(!fs.existsSync(typeFolderPath))  fs.mkdirSync(typeFolderPath)
     const title = await page.title()
-    await page.pdf({ path: `${typeFolderPath}/${title}.pdf`, format: 'a4', printBackground: true });
+    await page.pdf({ 
+        path: `${typeFolderPath}/${title}.pdf`, 
+        format: 'a4', 
+        printBackground: true, 
+        preferCSSPageSize: true
+    });
     await browser.close();
     console.log('success print')
 }
 
 function main() {
-    console.log(process.cwd())
+    console.log('Painting...Please wait.')
     const cmd = childProcess.spawn('npm.cmd', ['run',  'dev'])
     cmd.stdout.on('data', (data) => {
         const link = data.toString().match(/Local:\s(.+)[\r\n]/)
