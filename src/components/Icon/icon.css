@@ -13,3 +13,33 @@
 .icon-container a{
     color: var(--default-color);
 }
+
+.icon-container.icon-position-left {
+    margin-bottom: 10px;
+}
+
+.icon-container.icon-position-left .icon{
+    margin-left: 0;
+    margin-bottom: 2px;
+}
+
+.icon-container.icon-position-left a, .icon-container.icon-position-left span{
+    color: var(--default-color);
+    padding-left: 10px;
+}
+
+.icon-container.inlineFlex {
+    display: inline-flex;
+    margin: 0;
+}
+
+.icon-container.inlineFlex .icon{
+    margin-left: 0;
+    position: relative;
+    top: 3px;
+}
+
+.icon-container.icon-container.icon-position-left .link {
+    width:fit-content;
+}
+  

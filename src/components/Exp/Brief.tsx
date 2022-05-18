@@ -1,6 +1,6 @@
 import React from 'react'
-import Divider from './Divider'
-import PartItem, { PartList } from './PartItem'
+import Divider from '../Divider'
+import PartItem, { PartList } from '../PartItem'
 
 export default function Brief() {
   return (

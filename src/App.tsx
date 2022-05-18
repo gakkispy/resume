@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { COL } from './types'
-import { ColContext, ThemeContext } from './context'
+import { COL, TEMPLATE } from './types'
+import { ColContext, TempContext, ThemeContext } from './context'
 import { useTheme } from './hooks/useTheme'
 import Menubar from './components/Menubar'
 import FirstPage from './components/Pages/FirstPage'
 import SecondPage from './components/Pages/SecondPage'
+import OnePage from './components/Pages/OnePage'
 import './App.css'
 import 'paper-css/paper.css'
 
@@ -12,17 +13,18 @@ import 'paper-css/paper.css'
 
 function App() {
   const [colNum, setCol] = useState(COL.ONE)
+  const [template, setTemplate] = useState(TEMPLATE.TWO)
   const [auth, setAuth] = useState(false)
-  const {theme, setTheme} = useTheme()
+  const { theme, setTheme } = useTheme()
   useEffect(() => {
     if (import.meta.env.DEV || !import.meta.env.VITE_SECRET || !import.meta.env.VITE_SECRET_VALUE) {
       setAuth(true)
       return
     }
     const query = window.location.search
-    if(query) {
+    if (query) {
       const keyValue = query.slice(1).split('&')
-      const queryObj = keyValue.reduce((pre: {[key: string]: string}, cur) => {
+      const queryObj = keyValue.reduce((pre: { [key: string]: string }, cur) => {
         const [key, value] = cur.split('=')
         pre[key] = value
         return pre
@@ -30,22 +32,31 @@ function App() {
       if (queryObj[`${import.meta.env.VITE_SECRET}`] === import.meta.env.VITE_SECRET_VALUE) setAuth(true)
     }
   })
-  if (!auth){
+  if (!auth) {
     return <div>opps...You don't have a right to read this.</div>
   }
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
-      <ColContext.Provider value={colNum}>
-        <section className='content-container'>
-         <FirstPage></FirstPage>
-        </section>
-        <section className='content-container'>
-          <SecondPage></SecondPage>
-        </section>
-        <Menubar setCol={setCol}></Menubar>  
-      </ColContext.Provider> 
-    </ThemeContext.Provider>
-   
+    <TempContext.Provider value={{template,setTemplate}}>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        {template === TEMPLATE.ONE ? (
+          <ColContext.Provider value={colNum}>
+            <><section className='content-container sheet'>
+              <FirstPage></FirstPage>
+            </section><section className='content-container sheet'>
+                <SecondPage></SecondPage>
+              </section></>
+            <Menubar setCol={setCol}></Menubar>
+          </ColContext.Provider>) : (
+          <>
+            <section className='content-container sheet one-page'>
+              <OnePage></OnePage>
+            </section>
+            <Menubar setCol={setCol}></Menubar>
+          </>
+        )}
+      </ThemeContext.Provider>
+    </TempContext.Provider >
+
   )
 }
 export default App

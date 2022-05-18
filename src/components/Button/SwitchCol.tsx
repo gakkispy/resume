@@ -1,5 +1,5 @@
 import React from 'react'
-import { COL } from '../types'
+import { COL } from '../../types'
 
 export default function SwitchCol({setCol}: {setCol: (col: COL) => void}) {
   return (

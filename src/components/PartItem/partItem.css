@@ -1,6 +1,9 @@
 .item-container{
     margin-bottom: 10px;
 }
+.item-container.white-space {
+    white-space: pre-line;
+}
 .item-container .content,
 .item-container .bg-info{
     text-align: justify;

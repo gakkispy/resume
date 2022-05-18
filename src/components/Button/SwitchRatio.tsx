@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { RATIO } from '../types'
+import React, { useEffect, useState, useContext } from 'react'
+import { RATIO } from '../../types'
+import { ColContext, ThemeContext } from '../../context'
 const A4_SIZE = 595
 const addAndRemoveClass = (contents: NodeListOf<Element> , addClass: string, removeClass: string) => {
     contents.forEach(content => content.classList.add(addClass)) 
@@ -7,6 +8,7 @@ const addAndRemoveClass = (contents: NodeListOf<Element> , addClass: string, rem
 }
 export default function SwitchRatio() {
     const [ ratio, setRatio ] = useState(RATIO.FULL)
+    const {theme, setTheme} = useContext(ThemeContext)
     useEffect(() => {
         const contents = document.querySelectorAll('.content-container') || []
         if(ratio === RATIO.A4) {

@@ -6,15 +6,48 @@
     --border-bg-color: #FFF;
 }
 
-.contract-info .icon-container a{
+.contract-info .icon-container a {
     color: var(--color);
 }
-.contract-info .icon-container .icon use{
+
+.contract-info .icon-container .icon use {
     fill: var(--color);
 }
 
-.screen{
+.screen {
     background-color: #fff;
     margin-top: 34px;
     overflow: hidden;
+}
+
+.one-page {
+    height: auto;
+}
+
+.sheet.one-page {
+    height: auto !important;
+}
+
+.mt-xs {
+    margin-top: 0.5rem;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.inlineFlex {
+    display: inline-flex;
+}
+
+.text-decoration-delete {
+    text-decoration: line-through;
+}
+
+.pre-line {
+    white-space: pre-line;
+}
+
+.hover-hand {
+    cursor: pointer;
 }

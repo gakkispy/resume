@@ -1,11 +1,18 @@
 .one-col{
     width: 100%;
 }
-.container .two-col:nth-child(2n+1){
+.container .two-col-half:nth-child(2n+1){
     margin-right: 2em;
 }
-.two-col{
+.two-col-half{
     width: calc(50% - 1em);
+}
+.container .sidebar {
+    width: calc(30% - 1em);
+}
+.container .main {
+    width: calc(70% - 1em);
+    padding: 1em 3em 2em 1em;
 }
 .container {
     display: flex;
@@ -13,7 +20,12 @@
     font-size: 14px;
     padding: 1rem 2rem;
     flex-wrap: wrap;
+    width: 100%;
 }
 .A4 .container{
     padding: 1rem 10mm 1rem 5mm;
+}
+
+.grid-container {
+    display: inherit;
 }

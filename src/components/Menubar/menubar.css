@@ -27,6 +27,7 @@
     fill: #fff;
 }
 .print-btn-container,
+.new-print-btn-container,
 .col-btn-container,
 .ratio-btn-container {
     display: flex;
@@ -35,19 +36,25 @@
     position: static;
     background-color: transparent;
 }
-.A4 .menubar .print-btn-container{
+.A4 .menubar .style-btn-container{
     position: fixed;
     top: 10px;
     right: 10px;
 }
-.A4 .menubar .col-btn-container{
+
+.A4 .menubar .print-btn-container{
     position: fixed;
     top: 50px;
     right: 10px;
 }
-.A4 .menubar .ratio-btn-container{
+.A4 .menubar .col-btn-container{
     position: fixed;
     top: 90px;
+    right: 10px;
+}
+.A4 .menubar .ratio-btn-container{
+    position: fixed;
+    top: 130px;
     right: 10px;
 }
 @media print {

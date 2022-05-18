@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '../Grid'
 import PartItem, { PartList } from '../PartItem'
-import PersonalProject from '../PersonalProject'
+import PersonalProject from '../Exp/PersonalProject'
 
 export default function SecondPage() {
   return (

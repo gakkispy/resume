@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(__dirname, 'src/svgs')],
+      iconDirs: [path.resolve(__dirname, 'src/assets/svg')],
       symbolId: 'icon-[name]',
     }),
     htmlPlugin(loadEnv(mode, process.cwd())),

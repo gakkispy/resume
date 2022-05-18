@@ -5,7 +5,8 @@ const theme = {
 }
 export enum Theme {
     COlORFUL = 'colorful',
-    BACK = 'black'
+    BLACK = 'black',
+
 }
 export default {
     [Theme.COlORFUL]: {
@@ -13,7 +14,7 @@ export default {
         '--color': theme.white,
         '--border-color': theme.primary,
     },
-    [Theme.BACK]: {
+    [Theme.BLACK]: {
         '--background-color': theme.white,
         '--color': theme.black,
         '--border-color': theme.black,
