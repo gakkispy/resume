@@ -5,7 +5,6 @@ import { useTheme } from './hooks/useTheme'
 import Menubar from './components/Menubar'
 import FirstPage from './components/Pages/FirstPage'
 import SecondPage from './components/Pages/SecondPage'
-import OnePage from './components/Pages/OnePage'
 import './App.css'
 import 'paper-css/paper.css'
 
@@ -38,7 +37,6 @@ function App() {
   return (
     <TempContext.Provider value={{template,setTemplate}}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        {template === TEMPLATE.ONE ? (
           <ColContext.Provider value={colNum}>
             <><section className='content-container sheet'>
               <FirstPage></FirstPage>
@@ -46,14 +44,7 @@ function App() {
                 <SecondPage></SecondPage>
               </section></>
             <Menubar setCol={setCol}></Menubar>
-          </ColContext.Provider>) : (
-          <>
-            <section className='content-container sheet one-page'>
-              <OnePage></OnePage>
-            </section>
-            <Menubar setCol={setCol}></Menubar>
-          </>
-        )}
+          </ColContext.Provider>
       </ThemeContext.Provider>
     </TempContext.Provider >
 

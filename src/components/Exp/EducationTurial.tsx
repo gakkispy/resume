@@ -4,9 +4,11 @@ import Icon from '../Icon'
 import PartItem, { PartList } from '../PartItem'
 import { LINK_TYPE } from '../../types'
 
-export default function EducationTurial() {
+export default function EducationTurial(props: { pageIndex: number }) {
+    const page = props.pageIndex
     return (
         <div>
+            {props.pageIndex == 1 && (<>
             <Divider text="教育经历" />
             <PartList>
                 <PartItem
@@ -21,10 +23,10 @@ export default function EducationTurial() {
                         >
                             <PartList>
                                 <PartItem title="学生组织经历">
-                                    校社联办公室副主任、校粤港澳文化社组织部部长、班级生活委员"
+                                    校社联办公室副主任、校粤港澳文化社组织部部长、班级生活委员
                                 </PartItem>
                                 <PartItem title="奖惩情况">
-                                二等奖学金一次、优秀班干部一次、三好学生一次"
+                                二等奖学金一次、优秀班干部一次、三好学生一次
                                 </PartItem>
                             </PartList>
                         </PartItem>
@@ -92,7 +94,7 @@ export default function EducationTurial() {
                         </PartItem>
                     </PartList>
                 </PartItem>
-            </PartList>
+            </PartList></>)}
         </div>
     )
 }

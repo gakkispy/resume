@@ -9,25 +9,25 @@ function Header() {
     return (
       <div className={`header-container ${theme}`}>
         <div className='id-container'>
-          <h1>伍慧琳</h1>
-          <div className='post'>前端开发工程师</div>
+          <h1>姚森均</h1>
+          <div className='post'>开发工程师</div>
         </div>
         <div className='info-container'>
           <div className="base-info">
-            <div>女/1997.06</div>
-            <div>本科/2019年毕业</div>
-            <div>广东技术师范大学-数字媒体技术</div>
+            <div>男/1993.10</div>
+            <div>硕士/2022年毕业</div>
+            <div>中国计量大学</div>
           </div>
           <div className="contract-info">
             <Icon 
-              text="https://github.com/cyanxxx"
+              text="https://github.com/gakkispy"
             />
             <Icon 
               type={LINK_TYPE.HOME}
-              text="http://114.132.224.28"
+              text="https://gakkispy.github.io"
             />
             <Icon 
-              text="504512494@qq.com"
+              text="yaoenjun168@live.cn"
             />
             <Icon
               text={import.meta.env.VITE_PHONE as string}

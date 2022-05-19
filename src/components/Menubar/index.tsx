@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { COL, TEMPLATE } from '../../types'
 import { BaseIcon } from '../Icon'
 import SwitchCol from '../Button/SwitchCol'
@@ -7,9 +7,11 @@ import SwitchTheme from '../Button/SwitchTheme'
 import SwitchTemplate from '../Button/SwitchTemplate'
 import './menubar.css'
 import classnames from 'classnames'
+import { TempContext } from '../../context'
 
 export default function Menubar(props: {setCol: (col: COL) => void}) {
   const [toggle, setToggle] = useState(false)
+  const {template, setTemplate} = useContext(TempContext)
   return (
     <div className='menubar'>
         <BaseIcon
@@ -19,8 +21,8 @@ export default function Menubar(props: {setCol: (col: COL) => void}) {
         <div className={classnames("menubar-container", {toggle})}>
           <SwitchTemplate></SwitchTemplate>
           <SwitchTheme></SwitchTheme>
-          <SwitchCol setCol={props.setCol}></SwitchCol>
           <SwitchRatio></SwitchRatio>
+          {template == TEMPLATE.ONE && (<SwitchCol setCol={props.setCol}></SwitchCol>)}
         </div>      
     </div>
   )

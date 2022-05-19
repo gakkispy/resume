@@ -4,9 +4,10 @@ import Icon from '../Icon'
 import PartItem, { PartList } from '../PartItem'
 import { LINK_TYPE } from '../../types'
 
-export default function PersonalProject() {
+export default function PersonalProject(props: { pageIndex: number }) {
   return (
     <div>
+      {props.pageIndex == 2 && (<>
       <Divider text="个人作品" />
       <PartList>
         <PartItem
@@ -27,7 +28,7 @@ export default function PersonalProject() {
           className={{'title':'hover-hand'}}
           info="UI构思来自 windows 10 应用 番茄钟 10 ，在使用原生 javascript 完成应用后，用 React + react-router + ES6 重写该应用，可以设置工作、休息时间，设有快进功能，快速完成当前状态进入下一状态。"
           />
-      </PartList>
+      </PartList></>)}
     </div>
   )
 }
