@@ -3,8 +3,9 @@ import Divider from '../Divider'
 import Icon from '../Icon'
 import PartItem, { PartList } from '../PartItem'
 import { LINK_TYPE } from '../../types'
+import resumeUrl from '../../assets/img/resume.png'
 
-export default function PersonalProject(props: { pageIndex: number }) {
+export default function PersonalProject(props: { pageIndex: number, cols?: number }) {
   return (
     <div>
       {props.pageIndex == 2 && (<>
@@ -19,7 +20,9 @@ export default function PersonalProject(props: { pageIndex: number }) {
             并利用github page方便线上访问。"
             icon={{'type':LINK_TYPE.GITHUB,
                     'textHidden':true,}}
-            />
+            >
+              <img src={resumeUrl} alt="resume" />
+            </PartItem>
         <PartItem
           title="番茄时钟"
           icon={{'type':LINK_TYPE.GITHUB,
@@ -27,7 +30,9 @@ export default function PersonalProject(props: { pageIndex: number }) {
                   'textHidden':true,}}
           className={{'title':'hover-hand'}}
           info="UI构思来自 windows 10 应用 番茄钟 10 ，在使用原生 javascript 完成应用后，用 React + react-router + ES6 重写该应用，可以设置工作、休息时间，设有快进功能，快速完成当前状态进入下一状态。"
-          />
+          >
+            <img src="https://raw.githubusercontent.com/gakkispy/tomato-time/master/img/readme.png" alt="tomato-time" />
+          </PartItem>
       </PartList></>)}
     </div>
   )

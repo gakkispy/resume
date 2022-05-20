@@ -16,6 +16,7 @@
 
 .icon-container.icon-position-left {
     margin-bottom: 10px;
+    flex-direction: row-reverse;
 }
 
 .icon-container.icon-position-left .icon{
@@ -36,10 +37,10 @@
 .icon-container.inlineFlex .icon{
     margin-left: 0;
     position: relative;
-    top: 3px;
+    top: -4px;
 }
 
-.icon-container.icon-container.icon-position-left .link {
+.icon-container.icon-position-left .link {
     width:fit-content;
 }
   

@@ -51,7 +51,7 @@ export default function   PartItem(this: any, {children, info, title, technique,
                {!append && info && <div className={`${classNames.info ? classNames.info : ""} bg-info`}>
                   {info}
                 </div>}
-                <div className={`${classNames.content ? classNames.content : ""} content`}>
+                <div className={`${classNames.content ? classNames.content : ""} item-content`}>
                 {children}    
                 </div>
                 {append && info && <div className={`${classNames.info ? classNames.info : ""} bg-info`}>

@@ -2,7 +2,7 @@ import React from 'react'
 import Divider from '../Divider'
 import PartItem, { PartList } from '../PartItem'
 
-export default function Project(props: { pageIndex: number }) {
+export default function Project(props: { pageIndex: number, cols?: number }) {
     return (
         <div>
             <Divider text="工作经验" />

@@ -49,6 +49,7 @@ export default function SideBar() {
                     <Icon
                         type={LINK_TYPE.PHONE}
                         text={import.meta.env.VITE_PHONE as string}
+                        {...(import.meta.env.VITE_SECRIT && {linkHidden: true})}
                     />
                 </div>
             </div>

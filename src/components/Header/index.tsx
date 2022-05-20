@@ -21,16 +21,21 @@ function Header() {
           <div className="contract-info">
             <Icon 
               text="https://github.com/gakkispy"
+              position="right"
             />
             <Icon 
               type={LINK_TYPE.HOME}
               text="https://gakkispy.github.io"
+              position="right"
             />
             <Icon 
               text="yaoenjun168@live.cn"
+              position="right"
             />
             <Icon
               text={import.meta.env.VITE_PHONE as string}
+              position="right"
+              {...(import.meta.env.VITE_SECRIT && {linkHidden: true})}
             />
           </div>
         </div>

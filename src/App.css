@@ -6,7 +6,7 @@
     --border-bg-color: #FFF;
 }
 
-.contract-info .icon-container a {
+.contract-info .icon-container a, .contract-info .icon-container span {
     color: var(--color);
 }
 

@@ -1,19 +1,21 @@
 .sidebar-container {
     color: var(--color);
     background-color: var(--background-color);
-    height: 97.5%;
+    height: 66rem;
 }
 .sidebar-container.colorful{
     padding: 2rem 1rem;
 }
 .sidebar-container.black{
-    padding: 2rem 1rem 0;
+    padding: 2rem 1rem;
+    border: 1px solid var(--border-color);
 }
+
 .A4 .sidebar-container.colorful{
     padding: 1rem 1.1rem;
 }
 .A4 .sidebar-container.black{
-    padding: 1rem 1.1rem 0;
+    padding: 1rem 1.1rem;
 }
 .sidebar-container .id-container{
     display: flex;

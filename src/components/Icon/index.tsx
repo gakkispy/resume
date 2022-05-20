@@ -3,24 +3,25 @@ import { TempContext } from '../../context';
 import { LINK_TYPE, TEMPLATE } from '../../types'
 import './icon.css'
 
-interface Props{
-    linkHidden?: boolean;
-    textHidden?: boolean;
-    type?: LINK_TYPE;
-    icon?: string;
-    text: string;
+interface Props {
+  linkHidden?: boolean;
+  textHidden?: boolean;
+  type?: LINK_TYPE;
+  icon?: string;
+  text: string;
+  position?: 'left' | 'right';
 }
 const matchUrlType = (text: string) => {
-  if(text.match('github')) {
+  if (text.match('github')) {
     return LINK_TYPE.GITHUB
-  }else if(text.match(/^\d+$/)){
+  } else if (text.match(/^\d+$/)) {
     return LINK_TYPE.PHONE
-  }else if(text.match(/@/)){
+  } else if (text.match(/@/)) {
     return LINK_TYPE.EMAIL
   }
 }
 const matchIconType = (text: unknown) => {
-  switch (text){
+  switch (text) {
     case LINK_TYPE.EMAIL:
       return 'icon-envelope'
     case LINK_TYPE.GITHUB:
@@ -51,15 +52,15 @@ const matchIconType = (text: unknown) => {
       return 'icon-python'
     case LINK_TYPE.LINUX:
       return 'icon-linux'
-    default: 
+    default:
       return 'icon-link'
   }
 }
 
 const judgeGender = (text: string) => {
-  if(text.match('男')) {
+  if (text.match('男')) {
     return 'icon-sexm'
-  }else if(text.match('女')){
+  } else if (text.match('女')) {
     return 'icon-sexw'
   } else {
     return null
@@ -67,33 +68,25 @@ const judgeGender = (text: string) => {
 }
 export default function Icon(props: Props) {
   const { type, icon, text, linkHidden, textHidden } = props
-  const {template, setTemplate} = useContext(TempContext)
+  const { template, setTemplate } = useContext(TempContext)
   const defaultType = type || matchUrlType(text)
   const defaultGenderIcon = judgeGender(text)
   const defaultIcon = icon || (defaultGenderIcon || matchIconType(defaultType))
-  const formatLink = defaultType === LINK_TYPE.EMAIL? `mailto:${text}` : text
+  const formatLink = defaultType === LINK_TYPE.EMAIL ? `mailto:${text}` : text
   const isMobile = defaultType === LINK_TYPE.PHONE
-  const shouldHidden = typeof props.linkHidden !== 'undefined'? props.linkHidden : import.meta.env.PROD
-  const iconPosition = template === TEMPLATE.TWO? 'icon-position-left' : ''
+  const shouldHidden = typeof props.linkHidden !== 'undefined' ? props.linkHidden : import.meta.env.PROD
+  const iconPosition = typeof props.position !== 'undefined' ? props.position : 'icon-position-left'
   return (
-    <>{template == TEMPLATE.ONE ? (
-        <BaseIcon iconName={defaultIcon} className={`${iconPosition && iconPosition} ${textHidden ? 'inlineFlex' : ''}`}>
-      {shouldHidden && isMobile? (
+    <>
+      <BaseIcon iconName={defaultIcon} className={`${iconPosition} ${textHidden ? 'inlineFlex' : ''}`}>
+        {shouldHidden && isMobile ? (
           <span className="link">{text.replace(/(\d{3})(\d+)(\d{3})/, "$1***$3")}</span>
-        ): (
-          <a {...(!linkHidden && {href: `${formatLink}`, target: 'blank'})} className="link">{!textHidden && text}</a>
+        ) : (
+          <a {...(!linkHidden && { href: `${formatLink}`, target: 'blank' })} className="link">{!textHidden && text}</a>
         )}
-    </BaseIcon>
-    ):(
-      <FrontIcon iconName={defaultIcon}  className={`${iconPosition} ${textHidden ? 'inlineFlex' : ''}`}>
-        {shouldHidden && isMobile? (
-          <span className="link">{text.replace(/(\d{3})(\d+)(\d{3})/, "$1***$3")}</span>
-        ): (
-          <a {...(!linkHidden && {href: `${formatLink}`, target: 'blank'})} className="link">{!textHidden && text}</a>
-        )}
-      </FrontIcon>
-    )}</>
-        
+      </BaseIcon>
+    </>
+
   )
 }
 interface BaseIconProps {
@@ -102,10 +95,10 @@ interface BaseIconProps {
   onClick?: React.MouseEventHandler
   className?: string
 }
-export function BaseIcon({ iconName, children, onClick, className}: BaseIconProps) {
+export function BaseIcon({ iconName, children, onClick, className }: BaseIconProps) {
   return (
-    <div className={`icon-container ${className? className : ''}`} onClick={onClick}>
-      { children }
+    <div className={`icon-container ${className ? className : ''}`} onClick={onClick}>
+      {children}
       <svg aria-hidden="true" className='icon'>
         <use href={'#' + iconName} />
       </svg>
@@ -114,13 +107,4 @@ export function BaseIcon({ iconName, children, onClick, className}: BaseIconProp
 }
 
 
-export function FrontIcon({ iconName, children, onClick, className }: BaseIconProps) {
-  return (
-    <div className={`icon-container ${className? className : ''}`} onClick={onClick}>
-      <svg aria-hidden="true" className='icon'>
-        <use href={'#' + iconName} />
-      </svg>
-      { children }
-    </div>
-  )
-}
+

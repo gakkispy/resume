@@ -16,10 +16,10 @@ export default function FirstPage() {
             <Grid
                 left={(
                     <>
-                    <Content pageIndex={1}/>
+                    <Content pageIndex={1} cols={1}/>
                     </>
                 )}
-                right={<Brief />}
+                right={<Content pageIndex={1} cols={2}/>}
             /></>)
     case '2':
       return (<Grid
