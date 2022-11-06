@@ -14,7 +14,7 @@ export default function SideBar() {
             <Avatar />
             <div className='id-container'>
                 <h1>姚森均</h1>
-                <div className='post'>开发工程师</div>
+                <div className='post'>算法工程师</div>
             </div>
             <Divider text="基本信息" />
             <div className='info-container mt-xs' >

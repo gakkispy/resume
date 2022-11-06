@@ -40,7 +40,7 @@ async function print(link) {
 
 function main() {
     console.log('Painting...Please wait.')
-    const cmd = childProcess.spawn('npm.cmd', ['run',  'dev'])
+    const cmd = childProcess.spawn('npm', ['run',  'dev'])
     cmd.stdout.on('data', (data) => {
         const link = data.toString().match(/Local:\s(.+)[\r\n]/)
         if(link) {

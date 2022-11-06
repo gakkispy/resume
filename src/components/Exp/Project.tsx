@@ -33,7 +33,7 @@ export default function Project(props: { pageIndex: number, cols?: number }) {
                     title={`2019.03-2019.08 宁波市嘉众信息科技有限公司 运维实施工程师`}
                     info={'网络设备的配置优化，提出升级或优化方案;数据备份，容灾，数据监控，应急响应，故障排除等工作;进行小型机、服务器、路由器等设备管理，以及网络平台的运行监控和维护；'}
                 >
-                    <PartList>
+                    {/* <PartList>
                         <PartItem
                             title={'项目经历'}
                         >
@@ -50,7 +50,26 @@ export default function Project(props: { pageIndex: number, cols?: number }) {
 
                             </PartList>
                         </PartItem>
+                    </PartList> */}
+                <PartItem
+                    title={`2022.07-至今，宁波市某仪器仪表公司 算法研究工程师`}
+                    info={`任职公司研究中心算法研究工程师一职，负责研究适合公司仪器设备的算法并编写，期间将部门原有算法进行了整合重构，搭建了内部算法测试工具。`}
+                >
+                    <PartList>
+                        <PartItem
+                            title={`信号异常检测算法Debug`}
+                            info={`解决公司原有异常检测算法在部分情况下失效的问题，该算法采用随机森林进行机器学习，对异常信号进行特征匹配来进行异常判断，由于此前人员训练过程中将部分参数写为固定值，后续产品迭代参数变动，因此将参数改为形参输入，并重新训练解决。`}
+                        />
+                        <PartItem
+                            title={`一元线性回归并寻找最佳线性度区间算法`}
+                            info={`由于硬件参数实际值与理论值出现波动，因此采用一元线性回归来进行拟合后寻找最佳线性度区间，采用R^2作为评价指标`}
+                        />
+                        <PartItem
+                            title={`重叠峰解析算法`}
+                            info={`采用scipy的find_peaks，获取在阈值范围内的峰谷点，判断是否存在重叠峰形，若是，采用基于高斯函数的多元曲线拟合，将峰形解析为若干个高斯峰。`}
+                        />
                     </PartList>
+                </PartItem>
                 </PartItem></>)}
             </PartList>
         </div>

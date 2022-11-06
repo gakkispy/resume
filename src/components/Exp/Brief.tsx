@@ -34,7 +34,7 @@ export default function Brief() {
         <div className="skill-list">
            <Icon
               type={LINK_TYPE.PHP}
-              text="掌握Web开发：PHP、Node.js"
+              text="掌握Web开发：PHP、Node.js，了解Python Flask、ASP.NET Core"
               linkHidden={true} />
            <Icon
               type={LINK_TYPE.LARAVEL}
@@ -42,11 +42,11 @@ export default function Brief() {
               linkHidden={true} />
            <Icon
               type={LINK_TYPE.REACT}
-              text="掌握前端框架：Bootstrap、Vue、React"
+              text="掌握前端框架：Vue、React"
               linkHidden={true} />
            <Icon
               type={LINK_TYPE.PYTHON}
-              text="熟练运用Python，了解C、C++等语言"
+              text="熟练运用Python，了解C、C++、C#等语言"
               linkHidden={true} />
            <Icon
               type={LINK_TYPE.LINUX}
