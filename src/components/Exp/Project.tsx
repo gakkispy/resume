@@ -52,7 +52,7 @@ export default function Project(props: { pageIndex: number, cols?: number }) {
                         </PartItem>
                     </PartList> */}
                 <PartItem
-                    title={`2022.07-至今，宁波市某仪器仪表公司 算法研究工程师`}
+                    title={`2022.07-2022.12，宁波市某仪器仪表公司 算法研究工程师`}
                     info={`任职公司研究中心算法研究工程师一职，负责研究适合公司仪器设备的算法并编写，期间将部门原有算法进行了整合重构，搭建了内部算法测试工具。`}
                 >
                     <PartList>
@@ -69,6 +69,11 @@ export default function Project(props: { pageIndex: number, cols?: number }) {
                             info={`采用scipy的find_peaks，获取在阈值范围内的峰谷点，判断是否存在重叠峰形，若是，采用基于高斯函数的多元曲线拟合，将峰形解析为若干个高斯峰。`}
                         />
                     </PartList>
+                </PartItem>
+                <PartItem
+                    title={`2022.12-至今，甬桨科技（宁波）有限公司 AI算法研究工程师`}
+                    info={`任职公司研发部AI算法研究工程师，设计具体深度学习产品的参数并进行针对性的训练`}
+                >
                 </PartItem>
                 </PartItem></>)}
             </PartList>
